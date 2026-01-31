@@ -38,8 +38,12 @@ public class UIManager : MonoBehaviour
     {
 
     }
-    public void TogglePauseMenu()
+    public void EnablePauseMenu()
     {
-        pauseMenuCanvas.enabled = !pauseMenuCanvas.enabled;
+        pauseMenuCanvas.enabled = true;
+    }
+    public void DisablePauseMenu()
+    {
+        pauseMenuCanvas.enabled = false;
     }
 }

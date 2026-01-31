@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 public static GameManager Instance { get; private set; }
+public bool isGamePaused = false;
 
     private void Awake()
     {
@@ -26,9 +27,12 @@ public static GameManager Instance { get; private set; }
     }
     public void PauseGame()
     {
-        if (Time.timeScale == 0f)
-            Time.timeScale = 1f;
-        else
         Time.timeScale = 0f;
+        isGamePaused = true;
+    }
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
     }
 }
